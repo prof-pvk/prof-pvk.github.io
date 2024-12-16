@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor P V Krishna Rao - Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f7f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .profile-picture {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #d4d4d4;
+        }
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-details h1 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+        .profile-details p {
+            margin: 5px 0;
+            color: #6c757d;
+        }
+        .experience-section, .courses-section {
+            margin-top: 20px;
+        }
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #f4f8fb;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        ul li:hover {
+            background: #eaf3f9;
+        }
+        .courses-section a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .courses-section a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px 30px;
+        }
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .profile-picture {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="profile-picture.jpg" alt="Professor P V Krishna Rao">
+            </div>
+            <div class="profile-details">
+                <h1>Professor P V Krishna Rao</h1>
+                <p><strong>Working at:</strong> SVCN College of Engineering</p>
+            </div>
+        </div>
+
+        <div class="experience-section">
+            <h2>Experience</h2>
+            <ul>
+                <li><b>SVCN College of Engineering - Present work place</b></li>
+                <li>Geethanjali Institute of Science and Technology : 2011-2024</li>
+                <li>Jagan's Engineering College : 2009 - 2011</li>
+            </ul>
+        </div>
+
+        <div class="courses-section">
+            <h2>Courses for <span id="semester">2024 Sem 2 (Jan - June)</span></h2>
+            <ul>
+                <li><a href="course1.html">EMTL</a></li>
+                <!-- <li><a href="course2.html">Course 2</a></li> -->
+                <!-- <li><a href="course3.html">Course 3</a></li> -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Course Page Template -->
+    <div id="course-template" style="display: none;">
+        <h1>Course Name</h1>
+        <p>Course details and description go here...</p>
+    </div>
+</body>
+</html>
