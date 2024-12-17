@@ -42,30 +42,34 @@
             color: #6c757d;
             line-height: 1.6;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin: 10px 0;
-        }
-        ul li a {
+        ol li a {
             color: #3498db;
             text-decoration: none;
         }
-        ul li a:hover {
+        ol li a:hover {
             text-decoration: underline;
         }
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 1.6em;
-            }
-            h2 {
-                font-size: 1.4em;
-            }
+        .hall-of-fame {
+            background-color: #f4f8fb;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .hall-of-fame h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .hall-of-fame ul {
+            list-style: none;
+            padding: 0;
+        }
+        .hall-of-fame li {
+            margin-bottom: 8px;
+            padding: 5px 0;
+            border-bottom: 1px solid #eaf3f9;
+        }
+        .hall-of-fame li:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
@@ -95,26 +99,45 @@
         <img src="https://cdn.pixabay.com/photo/2016/07/18/17/28/electromagnetic-waves-1526374_1280.png" alt="EMTL Course Header" class="header-image">
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Content and Hall of Fame -->
     <div class="container">
-        <h1>Electromagnetic Theory and Transmission Lines (EMTL)</h1>
-        <p><strong>Professor:</strong> P V Krishna Rao</p>
-        <p><strong>Semester:</strong> Spring 2024</p>
+        <div class="row">
+            <!-- Left Content -->
+            <div class="col-md-8">
+                <h1>Electromagnetic Theory and Transmission Lines (EMTL)</h1>
+                <p><strong>Professor:</strong> P V Krishna Rao</p>
+                <p><strong>Semester:</strong> Spring 2024</p>
 
-        <div id="course-description">
-            <h2>Course Description</h2>
-            <p>This course covers the fundamental concepts of electromagnetic fields and their applications in the analysis of transmission lines. It provides insights into electric and magnetic field theories, Maxwell's equations, and wave propagation.</p>
-        </div>
+                <div id="course-description">
+                    <h2>Course Description</h2>
+                    <p>This course covers the fundamental concepts of electromagnetic fields and their applications in the analysis of transmission lines. It provides insights into electric and magnetic field theories, Maxwell's equations, and wave propagation.</p>
+                </div>
 
-        <div id="resources" class="mt-4">
-            <h2>Resources</h2>
-            <ol>
-                <li><a href="https://drive.google.com/file/d/1p02CtDPfxlwDMIwadrzLCx4_2VZ5xpB7/view?usp=sharing" target="_blank">Electric Fields</a></li>
-            </ol>
-        </div>
+                <div id="resources" class="mt-4">
+                    <h2>Resources</h2>
+                    <ol>
+                        <li><a href="https://drive.google.com/file/d/1p02CtDPfxlwDMIwadrzLCx4_2VZ5xpB7/view?usp=sharing" target="_blank">Electric Fields</a></li>
+                    </ol>
+                </div>
 
-        <div class="mt-4">
-            <a href="index.html" class="btn btn-primary">&larr; Back to Profile</a>
+                <div class="mt-4">
+                    <a href="index.html" class="btn btn-primary">&larr; Back to Profile</a>
+                </div>
+            </div>
+
+            <!-- Hall of Fame Section -->
+            <div class="col-md-4">
+                <div class="hall-of-fame">
+                    <h3>Hall of Fame</h3>
+                    <p>Outstanding Students for this Course:</p>
+                    <ul>
+<!--                         <li>Student 1 - 2022</li>
+                        <li>Student 2 - 2023</li>
+                        <li>Student 3 - 2023</li>
+                        <li>Student 4 - 2024</li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
