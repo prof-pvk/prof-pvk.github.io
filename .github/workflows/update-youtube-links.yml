@@ -1,0 +1,28 @@
+name: Fetch YouTube Links
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs daily
+  workflow_dispatch:  # Allows manual triggering
+  repository_dispatch:  # Allows external trigger (from restdb.io webhook)
+    types: [update-links]
+
+jobs:
+  update-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Fetch data
+        run: |
+          curl -H "x-apikey: ${{ secrets.RESTDB_API_KEY }}" \
+               "https://tubedb-ddc3.restdb.io/rest/youtube-links" \
+               -o youtube-links.json
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add youtube-links.json
+          git commit -m "Update YouTube links"
+          git push
