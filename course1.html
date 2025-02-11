@@ -71,6 +71,30 @@
         .hall-of-fame li:last-child {
             border-bottom: none;
         }
+
+        .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    gap: 20px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
     </style>
 </head>
 <body>
@@ -102,11 +126,11 @@
     <!-- Main Content and Hall of Fame -->
     <div class="container">
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-4">
                 <iframe  src="https://www.youtube.com/embed/A8ilG5q0on0" title="EMTL-BASICS-LAST VIDEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <!-- Left Content -->
             <div class="col-md-8">
@@ -126,6 +150,7 @@
                     </ol>
                 </div>
 
+                <div id="youtube-links-container" class="video-grid mt-4"></div>
                 <div class="mt-4">
                     <a href="index.html" class="btn btn-primary">&larr; Back to Profile</a>
                 </div>
@@ -149,5 +174,105 @@
 
     <!-- Include Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('youtube-links-container');
+            const jsonUrl = 'https://prof-pvk.github.io/youtube-links.json'; // Update with your actual URL
+    
+            fetch(jsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (Array.isArray(data)) {
+                        data.forEach(item => {
+                            if (item.is_visible === "1") { // Check if the video is marked as visible
+                                // Create a temporary DOM element to parse the iframe HTML string
+                                const tempDiv = document.createElement('div');
+                                tempDiv.innerHTML = item.url.trim();
+                                const iframe = tempDiv.querySelector('iframe');
+    
+                                if (iframe) {
+                                    // Extract the src attribute from the iframe
+                                    const videoSrc = iframe.getAttribute('src');
+    
+                                    // Create a new iframe element
+                                    const newIframe = document.createElement('iframe');
+                                    newIframe.src = videoSrc;
+                                    newIframe.width = '971';
+                                    newIframe.height = '615';
+                                    newIframe.title = iframe.title || 'YouTube Video';
+                                    newIframe.frameBorder = '0';
+                                    newIframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                                    newIframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                                    newIframe.allowFullscreen = true;
+    
+                                    // Append the new iframe to the container
+                                    container.appendChild(newIframe);
+                                    container.appendChild(document.createElement('br'));
+                                } else {
+                                    console.error('No iframe found in the provided URL string.');
+                                }
+                            }
+                        });
+                    } else {
+                        console.error('Data is not an array:', data);
+                    }
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        });
+    </script> -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('youtube-links-container');
+        const jsonUrl = 'https://prof-pvk.github.io/youtube-links.json'; // Update with your actual URL
+    
+        fetch(jsonUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (Array.isArray(data)) {
+                    data.forEach(item => {
+                        if (item.is_visible === "1") { // Check if the video is marked as visible
+                            // Create a temporary DOM element to parse the iframe HTML string
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = item.url.trim();
+                            const iframe = tempDiv.querySelector('iframe');
+    
+                            if (iframe) {
+                                // Create a new div with class 'video-container'
+                                const videoWrapper = document.createElement('div');
+                                videoWrapper.className = 'video-container';
+    
+                                // Append the iframe to the videoWrapper
+                                videoWrapper.appendChild(iframe);
+    
+                                // Append the videoWrapper to the container
+                                container.appendChild(videoWrapper);
+                            } else {
+                                console.error('No iframe found in the provided URL string.');
+                            }
+                        }
+                    });
+                } else {
+                    console.error('Data is not an array:', data);
+                }
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    });
+    
+</script>
+        
 </body>
 </html>
