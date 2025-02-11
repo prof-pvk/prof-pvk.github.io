@@ -1,5 +1,4 @@
 [
- {"_id":"67aab249bb50491a00016ab9","url":"test","is_visible":"1"},
- {"_id":"67aab415bb50491a00016aba","url":"tester","is_visible":"2"},
- {"_id":"67aab83fbb50491a00016abb","url":"<iframe width=\"1280\" height=\"811\" src=\"https://www.youtube.com/embed/A8ilG5q0on0\" title=\"EMTL-BASICS-LAST VIDEO\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>","is_visible":"1"}
+ {"_id":"67aac740bb50491a00016ac5","url":"<iframe width=\"971\" height=\"615\" src=\"https://www.youtube.com/embed/A8ilG5q0on0\" title=\"EMTL-BASICS-LAST VIDEO\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>","is_visible":"1"},
+ {"_id":"67aac91dbb50491a00016ac7","url":"<iframe width=\"971\" height=\"615\" src=\"https://www.youtube.com/embed/A8ilG5q0on0\" title=\"EMTL-BASICS-LAST VIDEO\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>","is_visible":"1"}
 ]
